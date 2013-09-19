@@ -1,0 +1,27 @@
+{
+  "name": "nodesql",
+  "version": "0.0.1",
+  "main": "lib/nodesql.js",
+  "description": "Simple NoSQL profiler written in Node",
+  "homepage": "nazargargol.com",
+  "bugs": "https://github.com/Gargol/nodesql/issues",
+  "author": {
+    "name": "Nazar Gargol",
+    "email": "nazargargol@gmail.com",
+    "url": "nazargargol.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gargol/nodesql"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-jasmine-node":"~0.1.0"
+  }
+}
