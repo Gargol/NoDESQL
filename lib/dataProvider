@@ -1,0 +1,37 @@
+var crypto = require('crypto');
+
+var DataProvider = (function(){
+  var getObject = function(){
+    var obj = {};
+    obj.guid = getGuid();
+    obj.sha1 = getSha1(obj.guid);
+    obj.number = getRandomNumber();
+    return obj;
+  }
+  /**
+   * Generates rfc4122 v4 compliant GUID
+   * @returns {string}
+   */
+  , getGuid = function(){
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+      return v.toString(16);
+    });
+  }
+  , getSha1 = function(str){
+    var sha = crypto.createHash('sha1');
+    sha.update(str);
+    return sha.digest('base64');
+  }
+  , getRandomNumber = function(){
+      return Math.random() * 1000;
+    }
+  ;
+
+  return {
+    getObject : getObject
+  }
+})();
+
+
+module.exports = DataProvider;
